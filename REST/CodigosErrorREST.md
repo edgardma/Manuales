@@ -1,5 +1,5 @@
-h1. Código de Error REST
-h2. Tabla
+# Código de Error REST
+## Tabla
 | Código Estatus | Mensaje de Estatus              | Descripción                                                                                                                                                                                                                                             |
 | -------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400            | Bad Request                     | Solicitud incorrecta. No se puede procesar la solicitud porque está mal formada o es incorrecta.                                                                                                                                                        |
@@ -24,3 +24,7 @@ h2. Tabla
 | 504            | Gateway Timeout                 | Terminó el tiempo de espera del puerta de enlace. El servidor, mientras actuaba como proxy, no recibió una respuesta oportuna del servidor ascendente al que necesitaba acceder para intentar completar la solicitud. Puede ocurrir junto con 503.      |
 | 507            | Insufficient Storage            | Espacio insuficiente. Se alcanzó la cuota máxima de almacenamiento.                                                                                                                                                                                     |
 | 509            | Bandwidth Limit Exceeded        | Límite de ancho de banda excedido. Su aplicación se ha limitado por superar el límite máximo de ancho de banda. Su aplicación puede volver a intentar la solicitud después de que haya transcurrido más tiempo.                                         |
+
+***Fuente***:
+
+- [Partner API REST error codes](https://docs.microsoft.com/en-us/partner/develop/error-codes)
