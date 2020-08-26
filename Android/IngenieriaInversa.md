@@ -10,18 +10,13 @@ En ocasiones, por diversos motivos he tenido que conocer el código fuente de un
 | *JD Project* | Herramienta para convertir archivos `.class` a archivos `.java`.        | [Link](http://java-decompiler.github.io/)                                                                              |
 | *APKTool*    | Herramienta para convertir los recursos del `APK`.                      | [Link 1](https://ibotpeaches.github.io/Apktool/install/) y [Link 2](https://bitbucket.org/iBotPeaches/apktool/downloads/) |
 
-
-
 ## Pasos
 
-| No. | Pasos                                                                                                                      |
-| --- | -------------------------------------------------------------------------------------------------------------------------- |
-| *1* | Conseguir el `APK`                                                                                                         |
-| *2* | Abrir el APK, se puede usar 7z, y extraer el archivo `.dex` y usar la herramienta `Dex2Jar` para generar el archivo `.jar`.|
-| *3* | Abrir el archivo `.jar` con la herramienta `JD Project` para visualizar el código fuente.                                  |
-| *4* | Para extraer los recursos, abrir el el `APK` con la herramienta `APKTool`.                                                 |
-
-
+1. Conseguir el archivo `.apk`.
+2. Abrir el archivo `.apk`, se puede usar 7z, para extraer el archivo `.dex`.
+3. Abrir el archivo `.dex` con la herramienta `Dex2Jar` para generar el archivo `.jar`.
+3. Abrir el archivo `.jar` con la herramienta `JD Project` para visualizar el código fuente.
+4. Para extraer los recursos, abrir el el `APK` con la herramienta `APKTool`.
 
 ***Fuente***:
 
