@@ -9,3 +9,7 @@ Descripción de los datos a llenar para crear un proyecto Maven en Eclipse:
 - **Name**: Nombre del proyecto. Ejemplo: ```Ejemplo01```
 
 ![Alt text](img/Pantalla_Eclipse_Crear_Proyecto_Maven_1.png?raw=true "Crear un proyecto Maven")
+
+***Fuente***:
+
+- [Starting a New Maven Project in Eclipse](https://rdf4j.org/documentation/tutorials/maven-eclipse-project/)
