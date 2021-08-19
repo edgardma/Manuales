@@ -1,8 +1,8 @@
-## Pasos para instalación de Jenkins en Ubuntu
+## Pasos para instalación de Jenkins
 
 ### Pre-requisitos:
 
-- Se debe instalar JDK8 o jdk11 ya sea de Oracle o OpenJDK
+- Se debe instalar JDK8 o jdk11 ya sea de Oracle u OpenJDK
 
 - Tener liberado el puerto 8080 (para la instalación por defecto)
 
@@ -36,6 +36,8 @@ Para instalar Jenkins en Docker, se puede usar la siguiente sentencia (tanto par
 ```
 docker run -d -p 50000:50000 -p 9080:9080 -e JENKINS_OPTS="--httpPort=9080" --name jenkinsdocker jenkins/jenkins:lts
 ```
+
+La primera vez, Docker bajará los archivos necesarios para crear el contenedor, por lo cual puede tomar su tiempo para concluir.
 
 Desde la consola, para acceder al contenido del contenedor se debe ejecutar la siguiente sentencia:
 
