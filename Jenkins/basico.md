@@ -31,24 +31,24 @@ sudo service jenkins status
 
 ### Instalar en Docker
 
-Para instalar Jenkins en Docker, se puede usar la siguiente sentencia (tanto para Windows como en Ubuntu), en donde se especifica el puerto en donde se ejecutará:
+Para instalar Jenkins en Docker, se puede usar la siguiente sentencia (tanto para Windows como en Ubuntu) en donde se puede especificar el puerto en donde se ejecutará el servicio, en este caso, el puerto 9080:
 
 ```
 docker run -d -p 50000:50000 -p 9080:9080 -e JENKINS_OPTS="--httpPort=9080" --name jenkinsdocker jenkins/jenkins:lts
 ```
 
-La primera vez, Docker bajará los archivos necesarios para crear el contenedor, por lo cual puede tomar su tiempo para concluir.
+La primera vez, Docker bajará los archivos necesarios para crear el contenedor, por lo cual, puede tomar su tiempo para concluir. En el caso que ya tenga esos archivos, Docker lo creará mucho mas rápido.
 
-Desde la consola, para acceder al contenido del contenedor se debe ejecutar la siguiente sentencia:
+Desde la consola, para acceder al contenido del contenedor, se debe ejecutar la siguiente sentencia:
 
 ```
 docker exec -i -t [id_contendor] /bin/bash
 ```
 
-Luego, para poder leer el contenido del archivo creado luego de la instalción, se puede ejecutar la siguiente sentencia:
+Luego, para poder leer el contenido del archivo creado luego de la instalación, se puede ejecutar la siguiente sentencia desde la consola:
 
 ```
 head /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-Validar la ejecución de Jenkins en un navegador local a la siguiente ruta `localhost:9080`.
+Finalmente, validar la ejecución de Jenkins en un navegador local a la siguiente ruta `localhost:9080`.
