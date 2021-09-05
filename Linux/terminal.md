@@ -76,10 +76,24 @@
 | *__tar -xzvf__ nombrecarpeta.tar.gz*               | Con este comando se descomprime el contenido de un archivo con el formato *.gz*.                                                                                                                        |
 | *__zip -r__ nombrecarpeta.zip nombrecarpeta*       | Con este comando se comprime una carpeta con el formato *.zip*.                                                                                                                                         |
 | *__unzip__ nombrecarpeta.zip*                      | Con este comando se descomprime un archivo con el formato *.zip*.                                                                                                                                       |
-| *__ps__*                                           | Lista los procesos que están ejecutandose en la terminal.                                                                                                                                               |
+| *__ps__*                                           | Lista los todos los procesos que están ejecutandose en la terminal.                                                                                                                                     |
+| *__ps__ aux*                                       | Lista los todos los procesos que están ejecutandose en el sistema operativo.                                                                                                                            |
+| *__ps__ aux \| grep usuario*                       | Lista los todos los procesos que están ejecutandose por el usuario en el sistema operativo.                                                                                                             |
 | *__kill__ pid*                                     | Elimina un proceso que tenga el PID (Process ID) ingresado.                                                                                                                                             |
 | *__top__*                                          | Lista los procesos que en este momento están ejecutandose.                                                                                                                                              |
 | *__source ~/.bashrc__*                             | Carga la configuración del archivo `.bashrc`.                                                                                                                                                           |
 | *__sudo chown__ root:root file*                    | Cambiar el propietario de un archivo, en este caso, al archivo `file` le cambia el propietario a `root` y al grupo `root` .                                                                             |
 | *__ip__ a*                                         | Lista las IP del equipo.                                                                                                                                                                                |
 | *__sudo smbpasswd__ -a [usuario]*                  | Dar los permisos a un usuario para poder acceder a un recurso compartido para una red Windows usando Samba.                                                                                             |
+| *__jobs__*                                         | Lista en consola los trabajos pendientes.                                                                                                                                                               |
+| *__./script.sh__ &*                                | Ejecuta el script, pero sin regresa el control a la consola.                                                                                                                                            |
+
+## Comandos para el monitoreo de recursos del sistema
+
+| Comando                                    | Descripción                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| `cat /proc/cpuinfo \| grep "processor"`    | Comando para visualizar el consumo de CPU del sistema                   |
+| `free` y `free -h`                         | Comando que devuelve la información de la memoria del sistema.          |
+| `du` y `du -hsc /home/usuario/`            | Comando que devuelve información del disco duro.                        |
+| `sudo ps auxf \| sort -nr -k 3 \| head -5` | Comando que devuelve los 5 procesos que consumen mas CPU en el sistema. |
+| `sudo ps auxf \| sort -nr -k 4 \| head -5` | Comando que devuelve los 5 procesos que consumen mas RAM en el sistema. |
