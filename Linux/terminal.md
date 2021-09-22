@@ -87,6 +87,8 @@
 | *__sudo smbpasswd__ -a [usuario]*                  | Dar los permisos a un usuario para poder acceder a un recurso compartido para una red Windows usando Samba.                                                                                             |
 | *__jobs__*                                         | Lista en consola los trabajos pendientes.                                                                                                                                                               |
 | *__./script.sh__ &*                                | Ejecuta el script, pero sin regresa el control a la consola.                                                                                                                                            |
+| *__route__ -n*                                     | Muestra en pantalla los datosd de red, incluso la puerta de enlace pretederminada o el dispositivo que está ototrgando internet.                                                                        |
+| *__nslookup__ google.com*                          | Muestra la IP de un dominio.                                                                                                                                                                            |
 
 ## Comandos para el monitoreo de recursos del sistema
 
