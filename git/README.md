@@ -78,147 +78,248 @@ git config --list
 ```
 
 Versión de Git:
+
+```shell
 git --version
+```
 
 Ayuda de los comandos:
+
+```shell
 git help
+```
 
 Para ver la configuración del usuario en el archivo de configuración:
-git config --global -e
 
-Para salir del editor escribir el siguiente comando:
-:q
+```shell
+git config --global -e
+```
 
 Para iniciar un repositorio en una carpeta:
+
+```shell
 git init
+```
 
 Lista de archivos que están registrados y/o modificados en ese momento en Git (los de color rojo, lo que están pendientes de subir, el de color verde, los listos para subir):
+
+```shell
 git status
+```
 
 Agregar todos los archivos para que Git esté pendiente de los cambios:
+
+```shell
 git add .
+```
 
 Agregar todos los archivos modificados para que Git esté pendiente de los cambios:
+
+```shell
 git add -A
+```
 
 Agregar todos los archivos para que Git esté pendiente de los cambios:
+
+```shell
 git add --all
+```
 
 Agregar un archivo para que Git esté pendiente de los cambios en el directorio actual:
+
+```shell
 git add NombreArchivo.extension
 git add *.xml
+```
 
 Agregar un archivo para que Git esté pendiente de los cambios en todo los directorios del proyecto:
+
+```shell
 git add “*.xml”
+```
 
 Agregar el contenido de una carpeta para que Git esté pendiente de los cambios:
+
+```shell
 git add NombreCarpeta/
+```
 
 Agregar los archivos seleccionados dentro de una carpeta para que Git esté pendiente de los cambios, por ejemplo:
+
+```shell
 git add NombreCarpeta/*.pf
+```
 
 Para hacer un commit a Git se debe ejecutar el siguiente comando:
+
+```shell
 git commit -m “Descripción del mensaje”
+```
 
 Para restaura lo realizado hasta el momento del repositorio:
+
+```shell
 git checkout -- .
+```
 
 Para ver los commit subidos:
+
+```shell
 git log
+```
 
 Para ver el resumen de todos los commit:
+
+```shell
 git log --oneline
+```
 
 Para ver el resumen de todos los commit, pero de forma más decorativa:
+
+```shell
 git log --oneline --decorate --all --graph
+```
 
 Excluir archivos luego de un “git add”:
+
+```shell
 git reset NombreArchivo.extensión
 git reset *.xml
+```
 
-Lista los comits de una manera corta
-git log --oneline --decorate --all --graph
+Para mostrar menos información o resumida en el status:
 
-Para mostrar menos información o resumida en el status
+```shell
 git status -s
+```
 
 Para mostrar menos información o resumida en el status e indicar la rama:
+
+```shell
 git status -s -b
+```
 
 Si hay problemas con el caracter CRLF, ejecutar la siguiente sentencia:
+
+```shell
 git config core.autocrlf true
+```
 
 Crear un alias, para ello se debe crear con el siguiente comando:
+
+```shell
 git config --global alias.[Nombre_Alias] “comandos”
 
-Ejemplo:
+#Ejemplo:
 git config --global alias.lg “log --oneline --decorate --all --graph”
+```
 
 Luego se puede ejecutar la sentencia con el alias:
 
+```shell
 git lg
 
-Otro ejemplo:
+#Otro ejemplo:
 git config --global alias.s “status -s -b”
 
-Ejecutar:
+#Ejecutar:
 git s
+```
 
 Para poder revisar y modificar el archivo de configuración, ejecutar la siguiente sentencia:
+
+```shell
 git config --global -e
+```
 
 Para poder revisar el archivo de configuración, ejecutar la siguiente sentencia:
-git config --global -l
 
-El Stage: Es un lugar donde podemos confirmar los archivos y carpetas que conformarán el commit.
+```shell
+git config --global -l
+```
+
+> **El Stage:** Es un lugar donde podemos confirmar los archivos y carpetas que conformarán el `commit`.
 
 Para ver las diferencias de los archivos en el repositorio:
+
+```shell
 git diff
 
-Para ver las diferencias en el Stage
+# Para ver las diferencias con el Stage
 git diff --staged
+```
 
 Para quitar un archivo del Stage:
+
+```shell
 git reset HEAD NOMBRE_ARCHIVO
 
-Ejemplo:
+#Ejemplo:
 git reset HEAD README.md
+```
 
 Para revertir los cambios:
+
+```shell
 git checkout -- NOMBRE_ARCHIVO
 
-Ejemplo:
+#Ejemplo:
 git checkout -- README.md
+```
 
 Adicionar y hacer un commit en una sola línea:
-git commit -am “Comentario”
 
-Para modificar el mensaje del comentario de un commit:
+```shell
+git commit -am “Comentario”
+```
+
+Para modificar el mensaje del comentario de un `commit`:
+
+```shell
 git commit --amend -m “Comentario”
+```
 
 Para adicionar unos cambios en el commit actual:
+
+```shell
 git reset --soft HEAD^
+```
 
 También puede funcionar de la siguiente forma:
+
+```shell
 git reset --soft ID_COMMIT
+```
 
 Para ir a un commit en particular y deshacer los cambios anteriores:
+
+```shell
 git reset --mixed ID_COMMIT
+```
 
-Renombrar el nombre del archivo dentro de un commit:
+Renombrar el nombre del archivo dentro de un `commit`:
+
+```shell
 git mv NOMBRE_ARCHIVO NUEVO_NOMBRE_ARCHIVO
+```
 
-Eliminar un archivo de un commit
+Eliminar un archivo de un `commit`:
+
+```shell
 git rm NOMBRE_ARCHIVO
+```
 
 Agregar y actualizar los cambios en el repositorio:
+
+```shell
 git add -u
+```
 
-Para ignorar archivos se debe crear un archivo “.gitignore”
-
-Ejemplo del contenido:
-*.log
-directorio/
+> Para ignorar archivos se debe crear un archivo “.gitignore”.
+> 
+> Ejemplo del contenido:
+> *.log
+> directorio/
 
 Listar las ranas en un repositorio:
 git branch
@@ -366,5 +467,3 @@ GitHub: Es una plataforma de desarrollo colaborativo de software para alojar pro
 
 Para saber las fuentes remotas que tenemos en el repositorio:
 git remote -v
-
-
