@@ -240,6 +240,8 @@ git config --global -l
 
 > **El Stage:** Es un lugar donde podemos confirmar los archivos y carpetas que conformarán el `commit`.
 
+
+
 Para ver las diferencias de los archivos en el repositorio:
 
 ```shell
@@ -321,149 +323,131 @@ git add -u
 > *.log
 > directorio/
 
-Listar las ranas en un repositorio:
-git branch
+Listar las ramas en un repositorio:
 
-Crear una rama en Git
+```shell
+git branch
+```
+
+Crear una rama en Git: 
+
+```shell
 git branch nombre_rama
+```
 
 Cambiar de rama:
-git checkout nombre_rama
 
-Agregar un archivo y un commit
+```shell
+git checkout nombre_rama
+```
+
+Agregar un archivo y un commit:
+
+```shell
 git commit -am “Mensaje”
+```
 
 Listar las diferencias entre dos ramas:
-git diff rama master
+
+```shell
+git diff nombre__rama master
+```
 
 Hacer un merge de una rama con la principal:
+
+```shell
 git checkout master
 git merge nombre_rama
+```
 
 Borrar una rama:
+
+```shell
 git branch -d nombre_rama
+```
 
 Para crear y pasar a una rama:
+
+```shell
 git checkout -b nombre_rama
+```
 
 Crear un TAG en el repositorio:
+
+```shell
 git tag nombre_tag
+```
 
 Listar los TAG en el repositorio:
+
+```shell
 git tag
+```
 
 Borrar un TAG:
+
+```shell
 git tag -d nombre_tag
+```
 
 Crear un TAG con anotaciones:
+
+```shell
 git tag -a v1.0.0 -m “Versión 1.0.0”
+```
 
 Crear un TAG en un commit anterior:
+
+```shell
 git tag -a v0.1.0 345d7de -m “Versión alfa”
+```
 
-Mostrar la información del TAG
+Mostrar la información del TAG:
+
+```shell
 git show nombre_tag
+```
 
-Para poder llevar los cambios al Stash
+Para poder llevar los cambios al Stash:
+
+```shell
 git stash
 git stash save
 git stash save “Etiqueta”
+```
 
 Para saber todos los trabajos en progreso:
+
+```shell
 git stash list
+```
 
 Para obtener los cambios del “Stash”:
+
+```shell
 git stash pop
+```
 
 Para restaurar el último registro en el Stash:
+
+```shell
 git stash apply [ID_STASH]
+```
 
 Para borrar un Stash:
+
+```shell
 git stash drop
+```
 
 Para borrar todas las entradas que hay en el Stash:
+
+```shell
 git stash clear
-
-Comandos:
-
-Para obtener la lista de ramas tenemos:
-git branch
-
-Pasar a una rama específica:
-git checkout [NOMBRE_RAMA]
-
-Para tomar la rama “master” para que se realice los commit:
-git rebase master
-
-git lg
-
-git checkout master
-
-git merge rama-misiones-completadas
-
-git lg
-
-Borramos la rama:
-git branch -d rama-misiones-completadas
-
-Rebase - Squash
-El git rebase, nos puede servir para actualizar el punto de separación de una rama
-
-Juntar los 4 últimos commit:
-git rebase -i HEAD~4
-
-Con este comando aparecerá un editor para poder modificar las acciones a realizar en cada commit
-
-Ejemplo 2: Modificar el comentario de un commit
-Para este ejemplo, modificamos el comentario del primer commit:
-
-Se ejecutamos la siguiente sentencia:
-git rebase -i HEAD~1
-
-Rebase - Edit
-Para poder reestablecer un archivo modificado del repositorio:
-git checkout -- [NOMBRE_ARCHIVO]
-
-Ejemplo:
-git checkout -- misiones.md
-
-Para poder separar los cambios de un commit, se puede ejecutar el siguiente comando:
-git rebase -i HEAD~2
-
-Luego aparece en el editor de texto pre-configurado de git la siguiente pantalla:
-
-Se cambia la palabra “pick” por “edit”, tal como se indica en la siguiente pantalla:
-
-Entonces, revertimos los cambios del último commit con el siguiente sentencia:
-git reset HEAD^
-
-Individualizar cada cambio realizado, ejemplo:
-git add README.md
-git commit -m “Actualizaciones al README”
-
-Las siguientes sentencias para adicionar el resto de cambios:
-git commit -am “Agregamos mas cambios”
-
-Hasta el momento, el repositorio se encuentra de esta forma:
-
-Cuando ejecutamos “git s” muestra lo siguiente:
-
-Para seguir, ejecutamos el siguiente comando:
-git rebase --continue
-
-Y ejecutamos “git s” y nos mostrará el siguiente resultado:
-
-Ejecutamos el “git lg” y ya no estará el commit inicial, solo los commit posteriores:
-
-WIP -> Work in progress
-
-Sección 6: Inicios en GitHub, Git Remote, Push & Pull 
-
-Explicación gráfica:
-
-GitHub: Es una plataforma de desarrollo colaborativo de software para alojar proyectos.
-
-“Origin” es un estandar para referirse al origen
+```
 
 Para saber las fuentes remotas que tenemos en el repositorio:
+
+```shell
 git remote -v
+```
