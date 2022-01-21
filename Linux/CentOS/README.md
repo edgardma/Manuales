@@ -32,9 +32,17 @@
   ## Instalar las herramientas de red
   sudo yum install net-tools
   ```
-  
-  
 
-- ccc
+- Verificar las direcciones IP del sistema operativo:
+  
+  ```shell
+  ip a
+  ```
+- Eliminar un paquete:
+  
+  ```shell
+  rpm -e [NOMBRE_PAQUETE]
+  ```
+- cccc
 
 

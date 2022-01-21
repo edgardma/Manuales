@@ -50,7 +50,7 @@
 | *__chmod__ u-x,go=w file*                          | En este comando, se quita el atributo de ejecución para el usuario y solo se le dá el atributo de escritura para el grupo y el resto.                                                                   |
 | *__chmod__ +x file*                                | En este comando, se otorga el permiso de ejecución para todos (usuario, grupo y otros) al archivo `file`.                                                                                               |
 | *__sudo su__ root*                                 | Cambia de usuario en la consola, en este caso, al usuario *root*.                                                                                                                                       |
-| *__passwd__*                                       | Comando para poder cambiar la contraseña de un usuario.                                                                                                                                                 |
+| *__passwd__* [USUARIO]                             | Comando para poder cambiar la contraseña de un usuario.                                                                                                                                                 |
 | *__ln -s__ ruta nombre*                            | Con este comando se crea un link simbólico o acceso directo a una ruta con un nombre abreviado o acceso.                                                                                                |
 | *__printenv__*                                     | Lista todas la variables de entorno.                                                                                                                                                                    |
 | *__echo $HOME__*                                   | Lista la ruta del *HOME* en la sesión actual.                                                                                                                                                           |
@@ -99,3 +99,31 @@
 | `du` y `du -hsc /home/usuario/`            | Comando que devuelve información del disco duro.                        |
 | `sudo ps auxf \| sort -nr -k 3 \| head -5` | Comando que devuelve los 5 procesos que consumen mas CPU en el sistema. |
 | `sudo ps auxf \| sort -nr -k 4 \| head -5` | Comando que devuelve los 5 procesos que consumen mas RAM en el sistema. |
+
+## Otras sentencias:
+
+Las siguientes sentencias son utiles en el día a día:
+
+```shell
+# Lista los usuaris del SO
+cat /etc/passwd
+
+# Ver las contraseñas de los usuarios (las claves están cifradas)
+# Pero antes de tener los permisos necesarios (sudo por ejemplo)
+cat /etc/shadow
+
+#Crear un usuario no te pide la clave (debe tener los permisos necesarios)
+useradd NOMBRE_USUARIO
+
+#Crea un usuario pero te pide la clave del mismo (también te crea una carpeta en el home)
+#debe tener los permisos necesarios
+#Este comando no está en todas las distro de Linux
+adduser NOMBRE_USUARIO
+
+#Con la siguiente sentencia buscamos si fue creado
+cat /etc/passwd | grep NOMBRE_USUARIO
+
+#Eliminar un usuario (debe contar con los permisos necesarios)
+userdel NOMBRE_USUARIO
+
+```

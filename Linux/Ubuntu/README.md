@@ -64,6 +64,7 @@
   ```shell
   sudo dpkg-reconfigure [NOMBRE_PAQUETE]
   ```
+
 * Buscar un paquete con `snap`:
   
   ```shell
@@ -74,19 +75,21 @@
 
 * Si el archivo `.bashrc` no existe, copiarlo con la siguiente ruta:
   
-  ```
+  ```shell
   cp /etc/skel/.bashrc ~/.bashrc
   ```
 
 * Abrir el archivo, en este caso con `vim` o cualquier editor para la consola:
   
-  ```
+  ```shell
   vim .bashrc
   ```
 
+* Para editar en `vim` presionar la tecla `i`.
+
 * Descomentar la siguiente línea quitando el caracter `#`:
   
-  ```
+  ```shell
   force_color_prompt=yes
   ```
 
@@ -94,7 +97,7 @@
 
 * Recargar el archivo de configuración:
   
-  ```
+  ```shell
   source ~/.bashrc
   ```
 
@@ -106,7 +109,7 @@
 
 - Instalación del SDK:
   
-  ```
+  ```shell
   sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \
@@ -115,7 +118,7 @@
 
 - Instalación del entorno de ejecución:
   
-  ```
+  ```shell
   sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \
@@ -130,13 +133,13 @@
 
 - Instalar uno por uno:
   
-  ```
+  ```shell
   sudo apt-get install ubuntu-wallpapers-karmic ubuntu-wallpapers-lucid ubuntu-wallpapers-maverick ubuntu-wallpapers-natty ubuntu-wallpapers-oneiric ubuntu-wallpapers-precise ubuntu-wallpapers-quantal ubuntu-wallpapers-raring ubuntu-wallpapers-saucy ubuntu-wallpapers-trusty ubuntu-wallpapers-vivid
   ```
 
 - Instalar todos de golpe:
   
-  ```
+  ```shell
   sudo apt-get install ubuntu-wallpapers*
   ```
 
@@ -148,7 +151,7 @@
 
 - Abrir la consola y ejecutar las siguientes sentencias uno por uno:
   
-  ```
+  ```shell
   sudo apt-get update
   sudo apt-get upgrade
   sudo apt autoremove
@@ -174,17 +177,23 @@
   sudo apt install tree
   ```
 
+    Se puede instalar varios paquetes en un solo comando:
+
+```shell
+sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
+```
+
 ## Crear un acceso directo a una aplicación:
 
 - Crear un archivo `.desktop` en la carpeta `/usr/share/applications` con permisos de administrador, ejemplo:
 
-```
+```shell
 sudo vim /usr/share/applications/sts.desktop
 ```
 
 - Luego poner el siguiente código:
 
-```
+```vim
 [Desktop Entry]
 Name =STS
 Comment =Spring Tool Suite
@@ -197,3 +206,34 @@ Type =Application
 *Fuente:*
 
 [Ubuntu crea el icono de acceso directo de androidstudio en el escritorio - programador clic](https://programmerclick.com/article/68481311309/)
+
+
+
+## Instalar Nagios:
+
+```shell
+# 1:
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz -O nagioscore.tar.gz
+# 2:
+tar xvzf nagioscore.tar.gz
+# 3:
+sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+# 4:
+sudo make all
+# 5:
+sudo make install-groups-users
+# 6:
+sudo make install
+# 7:
+sudo make install-init
+# 8:
+sudo make install-commandmode
+# 9:
+sudo make install-config
+# 10:
+sudo make install-webconf
+# 11:
+sudo systemctl start nagios
+
+
+```
