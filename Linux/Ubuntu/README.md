@@ -207,8 +207,6 @@ Type =Application
 
 [Ubuntu crea el icono de acceso directo de androidstudio en el escritorio - programador clic](https://programmerclick.com/article/68481311309/)
 
-
-
 ## Instalar Nagios:
 
 ```shell
@@ -234,6 +232,26 @@ sudo make install-config
 sudo make install-webconf
 # 11:
 sudo systemctl start nagios
+```
 
+## Otras instrucciones:
 
+```shell
+# Cambiar de sesión
+sudo su - NOMBRE_USUARIO
+
+#Para saber a que grupo pertenece un usuario
+groups NOMBRE_USUARIO
+
+# Adicionar un usuario a un grupo
+sudo gpasswd -a NOMBRE_USUARIO NOMBRE_GRUPO
+
+# Sacar un usuario de un grupo
+sudo gpasswd -d NOMBRE_USUARIO NOMBRE_GRUPO
+
+# Otra forma de adicionar un usuario a un grupo
+sudo usermod -aG NOMRE_GRUPO NOMBRE_USUARIO
+
+# Para ver los permisos de un usuario (estando en la sesión)
+sudo -l
 ```

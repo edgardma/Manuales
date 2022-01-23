@@ -106,7 +106,7 @@ Las siguientes sentencias son utiles en el día a día:
 
 ```shell
 # Lista los usuaris del SO
-cat /etc/passwd
+cat etc/passwd
 
 # Ver las contraseñas de los usuarios (las claves están cifradas)
 # Pero antes de tener los permisos necesarios (sudo por ejemplo)
@@ -125,5 +125,4 @@ cat /etc/passwd | grep NOMBRE_USUARIO
 
 #Eliminar un usuario (debe contar con los permisos necesarios)
 userdel NOMBRE_USUARIO
-
 ```
