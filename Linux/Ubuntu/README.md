@@ -261,3 +261,38 @@ sudo usermod -aG NOMRE_GRUPO NOMBRE_USUARIO
 # Para ver los permisos de un usuario (estando en la sesión)
 sudo -l
 ```
+
+## Instalar Mono y MonoDevelop
+
+```shell
+# Instalar primero Mono
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+sudo apt install mono-devel
+
+# Instalar MonoDevelop
+sudo apt install apt-transport-https dirmngr
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-vs.list
+sudo apt update
+sudo apt-get install monodevelop
+```
+
+> *Nota: En el caso de tener un problema al ejecutar el aplicativo, ejecutar los siguientes comandos:*
+
+```shell
+cd /usr/lib
+sudo mkdir gnome-terminal
+cd gnome-terminal
+sudo ln -s /usr/libexec/gnome-terminal-server
+```
+
+*Fuente:*
+
+[Download - Stable | Mono](https://www.mono-project.com/download/stable/)
+
+[Download | MonoDevelop](https://www.monodevelop.com/download/)
+
+[c# - Error when trying to run code: Debugger operation failed, Native error= Cannot find the specified file - Stack Overflow](https://stackoverflow.com/questions/59336129/error-when-trying-to-run-code-debugger-operation-failed-native-error-cannot-f)
