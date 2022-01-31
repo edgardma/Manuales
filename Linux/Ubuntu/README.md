@@ -19,6 +19,12 @@
   sudo apt autoremove
   ```
 
+- Actualizar los paquetes `snap`:
+  
+  ```shell
+  sudo snap refresh
+  ```
+
 ## Apagar y reiniciar:
 
 - Apagar la máquina:
