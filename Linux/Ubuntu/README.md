@@ -296,3 +296,71 @@ sudo ln -s /usr/libexec/gnome-terminal-server
 [Download | MonoDevelop](https://www.monodevelop.com/download/)
 
 [c# - Error when trying to run code: Debugger operation failed, Native error= Cannot find the specified file - Stack Overflow](https://stackoverflow.com/questions/59336129/error-when-trying-to-run-code-debugger-operation-failed-native-error-cannot-f)
+
+## Configurar ssh cliente
+
+```shell
+# Ejecutar la siguiente sentencia, en donde creará dos archivos en
+# la carpeta "/home/usuario/.ssh/" con el nombre "id_rsa" (llave privada)
+# y el archivo "id_rsa.pub" (llave publica)
+ssh-keygen
+
+# Para comprobar, listar los archivos de la carpeta
+ls .ssh
+
+# Copiar las llaves al servidor a donde se quiere ingresar
+ssh-copy-id -i ~/.ssh/id_rsa.pub usuario@IP_SERVIDOR
+
+# Ingresar al servidor con ssh cliente:
+ssh usuario@IP_SERVIDOR
+
+# Si se necesita pintar el log de ingreso al servidor:
+ssh -vvvv usuario@IP_SERVIDOR
+```
+
+## Configuración de un servicio
+
+```shell
+# Para ver el estado de un servicio
+sudo systemctl status SERVICIO
+
+# Si el estado del servicio está en "disabled"
+sudo systemctl enable SERVICIO
+
+# Inciar un servicio
+sudo systemctl start SERVICIO
+
+# Parar un servicio
+sudo systemctl stop SERVICIO
+
+# Reiniciar un servicio
+sudo systemctl restart SERVICIO
+
+# Lista todas las unidades de todos los servicios
+sudo systemctl list-units -t service --all
+```
+
+## Ver los logs del sistema
+
+```shell
+# Ir a la carpeta en donde se encuentra los log del sistema
+cd /var/log/
+
+# Ver el log de un aplicacion
+sudo journalctl -fu apache2
+
+# Ver la cantidad de disco
+sudo journalctl --disk-usage
+
+# Ver cuantas veces se ha reiniciado la máquina
+sudo journalctl --list-boots
+
+# Ver los log por tipo
+sudo journalctl -p crit
+```
+
+## Listar los puertos usados
+
+```shell
+sudo netstat -tulpn
+```
