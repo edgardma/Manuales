@@ -364,3 +364,38 @@ sudo journalctl -p crit
 ```shell
 sudo netstat -tulpn
 ```
+
+## Instalar NodeJS
+
+```shell
+# Download e installar el PPA del repositorio NodeSource
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
+# Instalar Node.js 16.x, incluyendo también se instalará npm.
+sudo apt install nodejs
+
+# Verificar la versión de Node.js instalada.
+node --version
+
+# Verficar la versión de npm instalada.
+npm --version
+```
+
+Fuente: [Installing Node.js and Express on Ubuntu 20.04 - Vultr.com](https://www.vultr.com/docs/installing-node-js-and-express-on-ubuntu-20-04/)
+
+
+
+## Instalar Github Desktop:
+
+```shell
+##
+wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
+##
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
+##
+sudo apt-get update
+##
+sudo apt install github-desktop
+```
+
+Fuente: https://github.com/shiftkey/desktop/
