@@ -1,6 +1,6 @@
-## Comandos para VI:
+## Comandos para vi:
 
-Los principales comandos de VI:
+Los principales comandos de vi:
 
 | Comando   | Descripción                                                                                        |
 | --------- | -------------------------------------------------------------------------------------------------- |
