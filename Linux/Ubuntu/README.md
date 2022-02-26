@@ -161,17 +161,21 @@
   sudo apt-get update
   sudo apt-get upgrade
   sudo apt autoremove
+  sudo apt-get dist-upgrade
   sudo apt-get install exfat-fuse exfat-utils hfsplus hfsutils ntfs-3g
   sudo apt-get install ubuntu-restricted-extras
   sudo apt-get install libavcodec-extra
   sudo apt-get install curl nano wget
   sudo apt-get install libdvdcss2.
   sudo apt-get install ttf-mscorefonts-installer
+  sudo apt-get install mtp-tools ipheth-utils ideviceinstaller ifuse
   sudo apt-get install gdebi gdebi-core synaptic
   sudo apt-get install p7zip-full p7zip-rar rar unrar zip unzip
   sudo apt-get install build-essential
+  sudo apt install libglvnd-dev pkg-config
   sudo apt-get install printer-driver-all
   sudo apt-get install vlc
+  sudo apt install gnome-tweaks
   sudo apt install gnome-shell-extensions
   sudo apt install dconf-editor
   sudo apt install gnome-shell-extension-autohidetopbar
@@ -183,35 +187,63 @@
   sudo apt install tree
   ```
 
-    Se puede instalar varios paquetes en un solo comando:
-
-```shell
-sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
-```
+- Se puede instalar varios paquetes en un solo comando:
+  
+  ```shell
+  sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
+  ```
 
 ## Crear un acceso directo a una aplicación:
 
 - Crear un archivo `.desktop` en la carpeta `/usr/share/applications` con permisos de administrador, ejemplo:
-
-```shell
-sudo vim /usr/share/applications/sts.desktop
-```
+  
+  ```shell
+  sudo vim /usr/share/applications/sts.desktop
+  ```
 
 - Luego poner el siguiente código:
+  
+  ```vim
+  [Desktop Entry]
+  Name =STS
+  Comment =Spring Tool Suite
+  Exec =/home/emarquez/app/sts-4/SpringToolSuite4
+  Icon =/home/emarquez/app/sts-4/icon.xpm
+  Terminal =false
+  Type =Application
+  Categories=Developer;
+  Keywords=Java;
+  ```
 
-```vim
-[Desktop Entry]
-Name =STS
-Comment =Spring Tool Suite
-Exec =/home/emarquez/app/sts-4/SpringToolSuite4
-Icon =/home/emarquez/app/sts-4/icon.xpm
-Terminal =false
-Type =Application
-```
+- El siguiente código es un ejemplo que otros datos se pueden ingresar en este archivo:
+  
+  ```vim
+  [Desktop Entry]
+  Name=MarkText
+  Comment=Next generation markdown editor
+  Exec=marktext %F
+  Terminal=false
+  Type=Application
+  Icon=marktext
+  Categories=Office;TextEditor;Utility;
+  MimeType=text/markdown;
+  Keywords=marktext;
+  StartupWMClass=marktext
+  Actions=NewWindow;
+  
+  [Desktop Action NewWindow]
+  Name=New Window
+  Exec=marktext --new-window %F
+  Icon=marktext
+  ```
 
 *Fuente:*
 
 [Ubuntu crea el icono de acceso directo de androidstudio en el escritorio - programador clic](https://programmerclick.com/article/68481311309/)
+
+[marktext/marktext.desktop at develop · marktext/marktext · GitHub](https://github.com/marktext/marktext/blob/develop/resources/linux/marktext.desktop)
+
+
 
 ## Instalar Nagios:
 
@@ -240,7 +272,7 @@ sudo make install-webconf
 sudo systemctl start nagios
 ```
 
-## Otras instrucciones:
+## Instrucciones para manejo de usuario:
 
 ```shell
 # Cambiar de sesión
@@ -381,9 +413,9 @@ node --version
 npm --version
 ```
 
-Fuente: [Installing Node.js and Express on Ubuntu 20.04 - Vultr.com](https://www.vultr.com/docs/installing-node-js-and-express-on-ubuntu-20-04/)
+*Fuente: [Installing Node.js and Express on Ubuntu 20.04 - Vultr.com](https://www.vultr.com/docs/installing-node-js-and-express-on-ubuntu-20-04/)*
 
-
+## 
 
 ## Instalar Github Desktop:
 
@@ -398,4 +430,40 @@ sudo apt-get update
 sudo apt install github-desktop
 ```
 
-Fuente: https://github.com/shiftkey/desktop/
+*Fuente: https://github.com/shiftkey/desktop/*
+
+## 
+
+## Cambiar la pantalla de inicio de sesión de Ubuntu:
+
+Si se tiene dos monitores en Ubuntu y el inicio de sesión aparece en el monitor secundario, ejecutar la siguiente sentencia:
+
+```shell
+sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
+```
+
+*Fuente: [La pantalla de inicio de sesión de Ubuntu 20.04 no aparece en la pantalla principal](https://isolution.pro/es/q/au14253028/la-pantalla-de-inicio-de-sesion-de-ubuntu-20-04-no-aparece-en-la-pantalla-principal)*
+
+## Registrar una clave pública:
+
+```shell
+## En el ejemplo se registra la clave 61E091672E206FF0
+gpg --keyserver keyserver.ubuntu.com --recv 61E091672E206FF0
+gpg --export --armor 61E091672E206FF0 | sudo apt-key add -
+sudo apt-get update
+```
+
+*Fuente: https://blog.desdelinux.net/como-solucionar-el-error-de-gpg-por-falta-de-llave-publica/*
+
+## Problemas con Opera al ejecutar un video HTML5:
+
+Cerrar Opera y ejecutar los siguientes comandos:
+
+```shell
+snap install chromium-ffmpeg
+sudo cp /usr/lib/x86_64-linux-gnu/opera/libffmpeg.so /usr/lib/x86_64-linux-gnu/opera/libffmpeg.so.tmp
+ls /snap/chromium-ffmpeg/current/
+sudo cp /snap/chromium-ffmpeg/current/chromium-ffmpeg-{version}/chromium-ffmpeg/libffmpeg.so /usr/lib/x86_64-linux-gnu/opera/
+```
+
+Fuente: [Opera browser does not play video from Netflix or HBO GO](https://signes.pl/opera-browser-does-not-play-netflix-or-hbogo/)
