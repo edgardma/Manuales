@@ -243,8 +243,6 @@
 
 [marktext/marktext.desktop at develop · marktext/marktext · GitHub](https://github.com/marktext/marktext/blob/develop/resources/linux/marktext.desktop)
 
-
-
 ## Instalar Nagios:
 
 ```shell
@@ -415,8 +413,6 @@ npm --version
 
 *Fuente: [Installing Node.js and Express on Ubuntu 20.04 - Vultr.com](https://www.vultr.com/docs/installing-node-js-and-express-on-ubuntu-20-04/)*
 
-## 
-
 ## Instalar Github Desktop:
 
 ```shell
@@ -430,9 +426,7 @@ sudo apt-get update
 sudo apt install github-desktop
 ```
 
-*Fuente: https://github.com/shiftkey/desktop/*
-
-## 
+*Fuente: [GitHub - shiftkey/desktop: Fork of GitHub Desktop to support various Linux distributions](https://github.com/shiftkey/desktop/)*
 
 ## Cambiar la pantalla de inicio de sesión de Ubuntu:
 
@@ -453,7 +447,7 @@ gpg --export --armor 61E091672E206FF0 | sudo apt-key add -
 sudo apt-get update
 ```
 
-*Fuente: https://blog.desdelinux.net/como-solucionar-el-error-de-gpg-por-falta-de-llave-publica/*
+*Fuente: [Cómo solucionar el error de GPG por falta de llave pública | Desde Linux](https://blog.desdelinux.net/como-solucionar-el-error-de-gpg-por-falta-de-llave-publica/)*
 
 ## Problemas con Opera al ejecutar un video HTML5:
 
@@ -467,3 +461,64 @@ sudo cp /snap/chromium-ffmpeg/current/chromium-ffmpeg-{version}/chromium-ffmpeg/
 ```
 
 Fuente: [Opera browser does not play video from Netflix or HBO GO](https://signes.pl/opera-browser-does-not-play-netflix-or-hbogo/)
+
+## Buscar log:
+
+```shell
+## Buscar en la carpeta archivos de tipo file con extensión .log
+find /var/log/ -name "*.log" -type f
+
+## Busca sin tener en cuenta si .log está en mayúscula o minúscula
+find /var/log/ -iname "*.LOG" -type f
+
+## Busca todos los archivos que no sea .log
+find /var/log/ ! -iname "*.LOG" -type f
+
+## Busca los archivos que han sido modificados hace 10 minutos
+find /etc/ -mtime 10
+
+## Buscar dentro de un archivo la palabra "server"
+grep "server" /etc/nginx/sites-available/default
+
+## Lista de un archivo log la primera columna
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+```
+
+## Crear un archivo bash ejecutable:
+
+* Crear un archivo `archivo1.sh`
+  
+  ```bash
+  vim archivo.sh
+  ```
+
+* Poner el siguiente código en el archivo
+  
+  ```bash
+  #!/bin/bash
+  #Variable:
+  WELCOME="Hola"
+  echo $WELCOME
+  
+  #Verificar la cantidad dde epacio en el SO
+  CWD=$(pwd)
+  FECHA=$(date +"%F%T")
+  echo $FECHA
+  
+  df -h | grep /dev > uso_disco_"$FECHA".txt
+  df -h | grep /dev/sda2 >> uso_disco_"$FECHA".txt
+  
+  echo "Se ha generado un archivo en la ubicacion $CWD"
+  ```
+
+* Cambiar las propiedades del archivo para ser ejecutado:
+  
+  ```bash
+  chmod u+x archivo1.sh
+  ```
+
+* Ejecutar el archivo:
+  
+  ```bash
+  ./archivo1.sh
+  ```
