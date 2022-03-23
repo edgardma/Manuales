@@ -1,3 +1,20 @@
+# Manual de comando para Ubuntu
+
+El presente manual es una recopilación personal de comandos para algunas tareas y configuraciones que he realizado en el tiempo que he usado Ubuntu. Muchos de estos comandos los he usados desde las versiones 14.XX por lo que pueden ser en casi todas las versiones modernas.
+
+## Atajos de teclado:
+
+| Combinación                   | Descripción                                                                        |
+| ----------------------------- | ---------------------------------------------------------------------------------- |
+| `ImprPant`                    | Guarda una captura de todo el escritorio en la carpeta “Imágenes”.                 |
+| `Shift` + `ImprPant`          | Nos permite seleccionar un trozo de la pantalla y guarda la captura en “Imágenes”. |
+| `Alt` + `ImprPant`            | Guarda una captura de la ventana activa en “Imágenes”.                             |
+| `Ctrl` + `ImprPant`           | Copia la captura de toda la pantalla en el portapapeles.                           |
+| `Shift` + `Ctrl` + `ImprPant` | Copia la captura de un trozo de la pantalla en el portapapeles.                    |
+| `Ctrl` + `Alt` + `ImprPant`   | Copia la captura de la ventana activa en el portapapeles.                          |
+
+*Fuente: [Cómo hacer capturas de pantalla en Ubuntu Linux &#8211; Laboratorios Docentes de la ETSIT](https://labs.etsit.urjc.es/index.php/tutoriales/como-capturar-pantalla-en-ubuntu-linux/)*
+
 ## Actualización del sistema
 
 - Actualizar el sistema:
