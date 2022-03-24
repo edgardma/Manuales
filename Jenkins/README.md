@@ -1,3 +1,7 @@
+# Manual de Jenkins
+
+Este manual contiene algunas instrucciones que he usado para poder instalar y configurar Jenkins 
+
 ## Pasos para instalación de Jenkins
 
 ### Pre-requisitos:
@@ -10,7 +14,7 @@
 
 Se debe ejecutar las siguientes sentencias:
 
-```
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
@@ -23,7 +27,7 @@ Validar la ejecución de Jenkins en un navegador a la siguiente ruta `localhost:
 
 En el caso que Jenkins aún no está activo, ejecutar las siguiente sentencia en la consola: 
 
-```
+```bash
 sudo service jenkins status
 sudo service jenkins start
 sudo service jenkins status
@@ -33,7 +37,7 @@ sudo service jenkins status
 
 Para instalar Jenkins en Docker, se puede usar la siguiente sentencia (tanto para Windows como en Ubuntu) en donde se puede especificar el puerto en donde se ejecutará el servicio, en este caso, el puerto 9080:
 
-```
+```bash
 docker run -d -p 50000:50000 -p 9080:9080 -e JENKINS_OPTS="--httpPort=9080" --name jenkinsdocker jenkins/jenkins:lts
 ```
 
@@ -41,13 +45,13 @@ La primera vez, Docker bajará los archivos necesarios para crear el contenedor,
 
 Desde la consola, para acceder al contenido del contenedor, se debe ejecutar la siguiente sentencia:
 
-```
+```bash
 docker exec -i -t [id_contendor] /bin/bash
 ```
 
 Luego, para poder leer el contenido del archivo creado luego de la instalación, se puede ejecutar la siguiente sentencia desde la consola:
 
-```
+```bash
 head /var/jenkins_home/secrets/initialAdminPassword
 ```
 
