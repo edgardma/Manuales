@@ -102,7 +102,7 @@
 
 ## Otras sentencias:
 
-Las siguientes sentencias son utiles en el día a día:
+Las siguientes sentencias son útiles en el día a día:
 
 ```shell
 # Lista los usuaris del SO
