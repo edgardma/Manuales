@@ -575,7 +575,7 @@ function log {
     local readonly level="$1"
     local readonly message="$2"
     local readonly timestamp=$(date + "%Y-%m-%d %H:%M:%S") >&2 echo -e "${timestamp} [&{level}] [$SCRIPT_NAME] &{message}"
-    
+
 }
 
 function run {
@@ -592,23 +592,42 @@ function make_backup {
     local GZIP="$(wich gzip)"
     local NOW="$(date + "+%d-%m-%Y")"
     local BUCKET=""
-    
+
     USER=""
     PASS=""
     HOST=""
     DATABASE=""
-    
+
     [ ! -D "$BAK" ] && mkdir -p "$BAK"
     FILE=$BAK/$DATABASE.$NOW-$(date + "%T").gz
-    
+
     local SECONDS=0
-    
+
     $MYSQLDUMP --single-transaction --set-gtid-purged=OFF -u $USER -h $HOST -p$PAS $DATABASE | $GZIP -9 > $FILE
-    
+
     duration=$SECONDS
-    
+
     echo "&(($duration /60) minutes)"
-    
+
     aws s3 cp $BAK "s3://$BUCKET" --recursive
 }
+```
+
+
+
+## Montar un disco
+
+Para montar un disco nuevo, se recomienda usar la herramienta `GParted`, para ello usar los siguientes pasos:
+
+1. Crear tabla de particiones.
+
+2. Crear partición
+
+3. Montar la partición, asignando una ruta, por ejemplo `/mnt/sda1`
+
+Luego, si no se tiene acceso a crear un archivo o carpeta, ejecutar las siguientes sentencias:
+
+```shell
+sudo chgrp adm /mnt/sda1
+sudo chmod g+w /mnt/sda1
 ```
