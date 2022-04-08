@@ -613,8 +613,6 @@ function make_backup {
 }
 ```
 
-
-
 ## Montar un disco
 
 Para montar un disco nuevo, se recomienda usar la herramienta `GParted`, para ello usar los siguientes pasos:
@@ -630,4 +628,36 @@ Luego, si no se tiene acceso a crear un archivo o carpeta, ejecutar las siguient
 ```shell
 sudo chgrp adm /mnt/sda1
 sudo chmod g+w /mnt/sda1
+```
+
+
+
+## Uso del Firewall
+
+```bash
+## Muestra el estado (activo/inactivo) y las reglas del firewall. 
+## Con el modificador numbered me muestra las reglas numeradas
+sudo ufw status
+
+## Lista las reglas enumeradas
+sudo ufw status numbered
+
+## Habilita un puerto
+sudo ufw allow PUERTO
+
+## Habilita un puerto con un comentario
+sudo ufw allow PUERTO comment COMENTARIO
+
+## Enciende el firewall
+sudo ufw enable
+
+## Borra una regla
+sudo ufw delete NUMERO_REGLA
+
+## Restringe las direcciones ip que pueden conectarse a cierto puerto.
+## Recordar que SSH trabaja con el protocolo TCP
+sudo ufw allow from DIRECCION_IP proto PROTOCOLO to any port PUERTO
+
+## Elimina todas las reglas
+sudo ufw reset
 ```
