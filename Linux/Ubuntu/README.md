@@ -542,7 +542,7 @@ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 
 ## Automatizar una tarea desde el terminal
 
-Para este ejemplo se usará una tarea que realice una copia de seguridad de la base de datos MySQL. Para ello, primero se creará el scritp:
+Para este ejemplo se usará una tarea que realice una copia de seguridad de la base de datos MySQL. Para ello, primero se creará el script:
 
 ```bash
 #!/bin/bash
@@ -630,8 +630,6 @@ sudo chgrp adm /mnt/sda1
 sudo chmod g+w /mnt/sda1
 ```
 
-
-
 ## Uso del Firewall
 
 ```bash
@@ -660,4 +658,54 @@ sudo ufw allow from DIRECCION_IP proto PROTOCOLO to any port PUERTO
 
 ## Elimina todas las reglas
 sudo ufw reset
+```
+
+
+
+## Instalación y uso de Lynis
+
+```shell
+sudo apt update
+
+## Instalar la herramienta
+sudo apt update install lynis
+
+## Ejecutar la siguiente sentencia para escanear el sistema
+sudo lynis audit system
+```
+
+
+
+## Poner un servicio web en automático
+
+Se debe crear un usuario, para ello se debe ejecutar la sentencia:
+
+```shell
+sudo adduser nodejs
+```
+
+Seguidamente, en la ruta `/lib/systemd/system/` crear el archivo `nombreservicio@.service` con el siguiente comando:
+
+```shell
+sudo vim /lib/systemd/system/nombreservicio@.service
+```
+
+Poner las siguientes líneas:
+
+```bash
+[Unit]
+Description=Balanceo de carga
+Documentation=https://github.com/usuario/linux
+After=network.target
+
+[Service]
+Environment=PORT=%i
+Type=simple
+User=nodejs
+WorkingDirectory=/home/nodejs/linux
+ExecStart=/usr/bin/node /home/nodejs/linux/server.js
+Restart-on=failure
+
+[Install]
+WantedBy=multi-user.target
 ```
