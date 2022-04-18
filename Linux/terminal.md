@@ -89,6 +89,12 @@
 | *__./script.sh__ &*                                | Ejecuta el script, pero sin regresa el control a la consola.                                                                                                                                            |
 | *__route__ -n*                                     | Muestra en pantalla los datosd de red, incluso la puerta de enlace pretederminada o el dispositivo que está ototrgando internet.                                                                        |
 | *__nslookup__ google.com*                          | Muestra la IP de un dominio.                                                                                                                                                                            |
+| *___`ip a`___*                                     | Muestra la información de la conexión de red actual del sistema.                                                                                                                                        |
+| *___`ip -4 a`___*                                  | Solo muestra la información de la conexión de red para IPv4.                                                                                                                                            |
+| *___`ip -6 a`___*                                  | Solo muestra la información de la conexión de red para IPv6.                                                                                                                                            |
+| *___`hostname`___*                                 | Muestra el identificador del equipo ante una red.                                                                                                                                                       |
+| *___`route -n`___*                                 | Muestra la puerta de enlace predeterminada del equipo.                                                                                                                                                  |
+| *___`nslookup google.com`___*                      | Muestra la IP de un dominio.                                                                                                                                                                            |
 
 ## Comandos para el monitoreo de recursos del sistema
 

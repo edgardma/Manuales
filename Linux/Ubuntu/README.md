@@ -2,6 +2,8 @@
 
 El presente manual es una recopilación personal de comandos para algunas tareas y configuraciones que he realizado en el tiempo que he usado Ubuntu. Muchos de estos comandos los he usados desde las versiones 14.XX por lo que pueden ser en casi todas las versiones modernas.
 
+Cabe indicar que Ubuntu Server es la distribución Linux mas usada según w3techs.
+
 ## Atajos de teclado:
 
 | Combinación                   | Descripción                                                                        |
@@ -288,6 +290,8 @@ sudo systemctl start nagios
 ```
 
 ## Instrucciones para manejo de usuario:
+
+Cabe indicar que el grupo de usuarios `sudo` es donde se adiciona a los administradores del sistema.
 
 ```shell
 # Cambiar de sesión
@@ -660,8 +664,6 @@ sudo ufw allow from DIRECCION_IP proto PROTOCOLO to any port PUERTO
 sudo ufw reset
 ```
 
-
-
 ## Instalación y uso de Lynis
 
 ```shell
@@ -673,8 +675,6 @@ sudo apt update install lynis
 ## Ejecutar la siguiente sentencia para escanear el sistema
 sudo lynis audit system
 ```
-
-
 
 ## Poner un servicio web en automático
 
