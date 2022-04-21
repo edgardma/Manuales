@@ -2,6 +2,8 @@
 
 El presente manual es una recopilación personal de comandos para algunas tareas y configuraciones que he realizado en el tiempo que he usado Ubuntu. Muchos de estos comandos los he usados desde las versiones 14.XX por lo que pueden ser en casi todas las versiones modernas.
 
+Cabe indicar que Ubuntu Server es la distribución Linux mas usada según w3techs.
+
 ## Atajos de teclado:
 
 | Combinación                   | Descripción                                                                        |
@@ -289,6 +291,8 @@ sudo systemctl start nagios
 
 ## Instrucciones para manejo de usuario:
 
+Cabe indicar que el grupo de usuarios `sudo` es donde se adiciona a los administradores del sistema.
+
 ```shell
 # Cambiar de sesión
 sudo su - NOMBRE_USUARIO
@@ -542,7 +546,7 @@ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 
 ## Automatizar una tarea desde el terminal
 
-Para este ejemplo se usará una tarea que realice una copia de seguridad de la base de datos MySQL. Para ello, primero se creará el scritp:
+Para este ejemplo se usará una tarea que realice una copia de seguridad de la base de datos MySQL. Para ello, primero se creará el script:
 
 ```bash
 #!/bin/bash
@@ -613,8 +617,6 @@ function make_backup {
 }
 ```
 
-
-
 ## Montar un disco
 
 Para montar un disco nuevo, se recomienda usar la herramienta `GParted`, para ello usar los siguientes pasos:
@@ -630,4 +632,80 @@ Luego, si no se tiene acceso a crear un archivo o carpeta, ejecutar las siguient
 ```shell
 sudo chgrp adm /mnt/sda1
 sudo chmod g+w /mnt/sda1
+```
+
+## Uso del Firewall
+
+```bash
+## Muestra el estado (activo/inactivo) y las reglas del firewall. 
+## Con el modificador numbered me muestra las reglas numeradas
+sudo ufw status
+
+## Lista las reglas enumeradas
+sudo ufw status numbered
+
+## Habilita un puerto
+sudo ufw allow PUERTO
+
+## Habilita un puerto con un comentario
+sudo ufw allow PUERTO comment COMENTARIO
+
+## Enciende el firewall
+sudo ufw enable
+
+## Borra una regla
+sudo ufw delete NUMERO_REGLA
+
+## Restringe las direcciones ip que pueden conectarse a cierto puerto.
+## Recordar que SSH trabaja con el protocolo TCP
+sudo ufw allow from DIRECCION_IP proto PROTOCOLO to any port PUERTO
+
+## Elimina todas las reglas
+sudo ufw reset
+```
+
+## Instalación y uso de Lynis
+
+```shell
+sudo apt update
+
+## Instalar la herramienta
+sudo apt update install lynis
+
+## Ejecutar la siguiente sentencia para escanear el sistema
+sudo lynis audit system
+```
+
+## Poner un servicio web en automático
+
+Se debe crear un usuario, para ello se debe ejecutar la sentencia:
+
+```shell
+sudo adduser nodejs
+```
+
+Seguidamente, en la ruta `/lib/systemd/system/` crear el archivo `nombreservicio@.service` con el siguiente comando:
+
+```shell
+sudo vim /lib/systemd/system/nombreservicio@.service
+```
+
+Poner las siguientes líneas:
+
+```bash
+[Unit]
+Description=Balanceo de carga
+Documentation=https://github.com/usuario/linux
+After=network.target
+
+[Service]
+Environment=PORT=%i
+Type=simple
+User=nodejs
+WorkingDirectory=/home/nodejs/linux
+ExecStart=/usr/bin/node /home/nodejs/linux/server.js
+Restart-on=failure
+
+[Install]
+WantedBy=multi-user.target
 ```
