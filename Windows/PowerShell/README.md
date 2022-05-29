@@ -20,6 +20,6 @@ Get-Date -format "yyyy-MM-dd ss:mm:HH"
 
 Este sería su ejecución:
 
-![](C:\Users\edgar\AppData\Roaming\marktext\images\2022-05-29-00-24-40-image.png)
+![](images\2022-05-29-00-24-40-image.png)
 
 Para poder probar las sentencias, se puede usar el editor `Windows PowerShell ISE` para validar su ejecución. 
