@@ -132,3 +132,23 @@ cat /etc/passwd | grep NOMBRE_USUARIO
 #Eliminar un usuario (debe contar con los permisos necesarios)
 userdel NOMBRE_USUARIO
 ```
+
+## Personalizar un mensaje al iniciar el terminal
+
+Para poder personalizar un mensaje en el terminal, se debe modificar el archivo `~/.bashrc` con un editor y poner al final del archivo el texto que se quiere que se imprima en el terminal al iniciarlo. Por ejemplo, en el siguiente mensaje se puede visualizar al iniciar el terminal:
+
+```bash
+printf "\n"
+printf " #     #                         #######                                    \n"
+printf " #     #  ####  #        ##      #       #####   ####    ##   #####  #####  \n"
+printf " #     # #    # #       #  #     #       #    # #    #  #  #  #    # #    # \n"
+printf " ####### #    # #      #    #    #####   #    # #      #    # #    # #    # \n"
+printf " #     # #    # #      ######    #       #    # #  ### ###### #####  #    # \n"
+printf " #     # #    # #      #    #    #       #    # #    # #    # #   #  #    # \n"
+printf " #     #  ####  ###### #    #    ####### #####   ####  #    # #    # #####  \n"
+printf "\n"
+```
+
+Y este mensaje aparecerá al iniciar el terminal:
+
+![](/home/emarquez/codigo/github/Manuales/Linux/images/2022-05-30%2009-19-02.png)
