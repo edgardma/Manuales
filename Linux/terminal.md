@@ -151,4 +151,4 @@ printf "\n"
 
 Y este mensaje aparecerá al iniciar el terminal:
 
-![](/home/emarquez/codigo/github/Manuales/Linux/images/2022-05-30%2009-19-02.png)
+![Alt text](images/2022-05-30%2009-19-02.png?raw=true "Ejemplo de la ejecución sentencia al iniciar la consola")
