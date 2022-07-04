@@ -4,6 +4,18 @@ El presente manual es una recopilación personal de comandos para algunas tareas
 
 Cabe indicar que Ubuntu Server es la distribución Linux mas usada según w3techs.
 
+
+
+## Como saber la versión de Ubuntu
+
+Para conocer la versión de Ubuntu ejecutandose, se debe utilizar la siguiente sentencia:
+
+```bash
+lsb_release -a
+```
+
+
+
 ## Atajos de teclado:
 
 | Combinación                   | Descripción                                                                        |
