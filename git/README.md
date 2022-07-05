@@ -240,8 +240,6 @@ git config --global -l
 
 > **El Stage:** Es un lugar donde podemos confirmar los archivos y carpetas que conformarán el `commit`.
 
-
-
 Para ver las diferencias de los archivos en el repositorio:
 
 ```shell
@@ -450,4 +448,20 @@ Para saber las fuentes remotas que tenemos en el repositorio:
 
 ```shell
 git remote -v
+```
+
+## Subir un archivos locales a un repositorio remoto
+
+Para poder subir archivos locales a un repositorio remoto, como por ejemplo al repositorio `https://github.com/edgardma/curso-git.git`, se debe ejecutar las siguientes sentencias:
+
+```shell
+git remote add origin https://github.com/edgardma/curso-git.git
+git branch -M main
+git push -u origin main
+```
+
+Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente sentencia:
+
+```sh
+git push --tags
 ```
