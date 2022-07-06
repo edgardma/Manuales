@@ -339,7 +339,7 @@ Cambiar de rama:
 git checkout nombre_rama
 ```
 
-Agregar un archivo y un commit:
+Agregar un archivo y un `commit`:
 
 ```shell
 git commit -am “Mensaje”
@@ -394,7 +394,7 @@ Crear un TAG con anotaciones:
 git tag -a v1.0.0 -m “Versión 1.0.0”
 ```
 
-Crear un TAG en un commit anterior:
+Crear un TAG en un `commit` anterior:
 
 ```shell
 git tag -a v0.1.0 345d7de -m “Versión alfa”
@@ -450,6 +450,14 @@ Para saber las fuentes remotas que tenemos en el repositorio:
 git remote -v
 ```
 
+El cual debe salir un resultado como el siguiente:
+
+```shell
+git remote -v
+origin  https://github.com/edgardma/curso-git.git (fetch)
+origin  https://github.com/edgardma/curso-git.git (push)
+```
+
 ## Subir un archivos locales a un repositorio remoto
 
 Para poder subir archivos locales a un repositorio remoto, como por ejemplo al repositorio `https://github.com/edgardma/curso-git.git`, se debe ejecutar las siguientes sentencias:
@@ -465,3 +473,31 @@ Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente se
 ```shell
 git push --tags
 ```
+
+## Corregir algunos "Warning"
+
+Para corregir el `Warning`: `Pulling without reconcile strategy` se puede resolver con los siguientes comandos:
+
+```shell
+## Merge
+git config --global pull.rebase false
+
+## Rebase
+git config --global pull.rebase true
+
+## Solo fast-forward
+git config --global pull.ff only
+```
+
+Para validar dicha configuración, se puede ejecutar la siguiente sentencia:
+
+```shell
+## Abre el archivo de configuración del repositorio local
+git config --global -e
+
+## Puede revisar que el archivo este la siguiente línea:
+##[pull]
+##   ff = only
+```
+
+El mas usado es el último y es el que uso en mis repositorios. 
