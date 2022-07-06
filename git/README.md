@@ -462,6 +462,6 @@ git push -u origin main
 
 Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente sentencia:
 
-```sh
+```shell
 git push --tags
 ```
