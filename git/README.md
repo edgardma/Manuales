@@ -135,7 +135,7 @@ git add *.xml
 Agregar un archivo para que Git esté pendiente de los cambios en todo los directorios del proyecto:
 
 ```shell
-git add “*.xml”
+git add "*.xml"
 ```
 
 Agregar el contenido de una carpeta para que Git esté pendiente de los cambios:
@@ -150,10 +150,16 @@ Agregar los archivos seleccionados dentro de una carpeta para que Git esté pend
 git add NombreCarpeta/*.pf
 ```
 
-Para hacer un commit a Git se debe ejecutar el siguiente comando:
+Para hacer un `commit` a Git se debe ejecutar el siguiente comando:
 
 ```shell
-git commit -m “Descripción del mensaje”
+git commit -m "Descripción del mensaje"
+```
+
+Asimismo, para agregar los archivos modificados: 
+
+```shell
+git commite -am "Descripción del mensaje"
 ```
 
 Para restaura lo realizado hasta el momento del repositorio:
@@ -162,25 +168,25 @@ Para restaura lo realizado hasta el momento del repositorio:
 git checkout -- .
 ```
 
-Para ver los commit subidos:
+Para ver los `commit` subidos:
 
 ```shell
 git log
 ```
 
-Para ver el resumen de todos los commit:
+Para ver el resumen de todos los `commit`:
 
 ```shell
 git log --oneline
 ```
 
-Para ver el resumen de todos los commit, pero de forma más decorativa:
+Para ver el resumen de todos los `commit`, pero de forma más decorativa:
 
 ```shell
 git log --oneline --decorate --all --graph
 ```
 
-Excluir archivos luego de un “git add”:
+Excluir archivos luego de un `git add`:
 
 ```shell
 git reset NombreArchivo.extensión
@@ -208,10 +214,10 @@ git config core.autocrlf true
 Crear un alias, para ello se debe crear con el siguiente comando:
 
 ```shell
-git config --global alias.[Nombre_Alias] “comandos”
+git config --global alias.[Nombre_Alias] "comandos"
 
 #Ejemplo:
-git config --global alias.lg “log --oneline --decorate --all --graph”
+git config --global alias.lg "log --oneline --decorate --all --graph"
 ```
 
 Luego se puede ejecutar la sentencia con el alias:
@@ -220,7 +226,7 @@ Luego se puede ejecutar la sentencia con el alias:
 git lg
 
 #Otro ejemplo:
-git config --global alias.s “status -s -b”
+git config --global alias.s "status -s -b"
 
 #Ejecutar:
 git s
@@ -249,7 +255,7 @@ git diff
 git diff --staged
 ```
 
-Para quitar un archivo del Stage:
+Para quitar un archivo del `Stage`:
 
 ```shell
 git reset HEAD NOMBRE_ARCHIVO
@@ -267,19 +273,19 @@ git checkout -- NOMBRE_ARCHIVO
 git checkout -- README.md
 ```
 
-Adicionar y hacer un commit en una sola línea:
+Adicionar y hacer un `commit` en una sola línea:
 
 ```shell
-git commit -am “Comentario”
+git commit -am "Comentario"
 ```
 
 Para modificar el mensaje del comentario de un `commit`:
 
 ```shell
-git commit --amend -m “Comentario”
+git commit --amend -m "Comentario"
 ```
 
-Para adicionar unos cambios en el commit actual:
+Para adicionar unos cambios en el `commit` actual:
 
 ```shell
 git reset --soft HEAD^
@@ -291,7 +297,7 @@ También puede funcionar de la siguiente forma:
 git reset --soft ID_COMMIT
 ```
 
-Para ir a un commit en particular y deshacer los cambios anteriores:
+Para ir a un `commit` en particular y deshacer los cambios anteriores:
 
 ```shell
 git reset --mixed ID_COMMIT
@@ -315,7 +321,7 @@ Agregar y actualizar los cambios en el repositorio:
 git add -u
 ```
 
-> Para ignorar archivos se debe crear un archivo “.gitignore”.
+> Para ignorar archivos se debe crear un archivo `.gitignore`.
 > 
 > Ejemplo del contenido:
 > *.log
@@ -342,7 +348,7 @@ git checkout nombre_rama
 Agregar un archivo y un `commit`:
 
 ```shell
-git commit -am “Mensaje”
+git commit -am "Mensaje"
 ```
 
 Listar las diferencias entre dos ramas:
@@ -351,7 +357,7 @@ Listar las diferencias entre dos ramas:
 git diff nombre__rama master
 ```
 
-Hacer un merge de una rama con la principal:
+Hacer un `merge` de una rama con la principal:
 
 ```shell
 git checkout master
@@ -391,13 +397,13 @@ git tag -d nombre_tag
 Crear un TAG con anotaciones:
 
 ```shell
-git tag -a v1.0.0 -m “Versión 1.0.0”
+git tag -a v1.0.0 -m "Versión 1.0.0"
 ```
 
 Crear un TAG en un `commit` anterior:
 
 ```shell
-git tag -a v0.1.0 345d7de -m “Versión alfa”
+git tag -a v0.1.0 345d7de -m "Versión alfa"
 ```
 
 Mostrar la información del TAG:
@@ -406,12 +412,12 @@ Mostrar la información del TAG:
 git show nombre_tag
 ```
 
-Para poder llevar los cambios al Stash:
+Para poder llevar los cambios al `Stash`:
 
 ```shell
 git stash
 git stash save
-git stash save “Etiqueta”
+git stash save "Etiqueta"
 ```
 
 Para saber todos los trabajos en progreso:
@@ -420,25 +426,25 @@ Para saber todos los trabajos en progreso:
 git stash list
 ```
 
-Para obtener los cambios del “Stash”:
+Para obtener los cambios del `Stash`:
 
 ```shell
 git stash pop
 ```
 
-Para restaurar el último registro en el Stash:
+Para restaurar el último registro en el `Stash`:
 
 ```shell
 git stash apply [ID_STASH]
 ```
 
-Para borrar un Stash:
+Para borrar un `Stash`:
 
 ```shell
 git stash drop
 ```
 
-Para borrar todas las entradas que hay en el Stash:
+Para borrar todas las entradas que hay en el `Stash`:
 
 ```shell
 git stash clear
@@ -500,4 +506,39 @@ git config --global -e
 ##   ff = only
 ```
 
-El mas usado es el último y es el que uso en mis repositorios. 
+## Subir los cambios cuando hay conflictos
+
+Si se tiene unos cambios en el local pero se quieren subir y en el repositorio tiene otros cambios:
+
+```shell
+git commit -am "Commit local"
+git pull ## Sale error porque hay otros cambios en el repositorio
+git pull --rebase ## Fuerza un merge en el local
+
+## Se debe corregir los conflictos y grabar antes de pasar a la siguiente sentencia
+
+git add . 
+git commit -m "Confirmar el cambio local con los conflictos resueltos"
+git rebase --continue ## Para confirmar que todo esta OK en el local
+git push ## Sube los cambios al repositorio
+```
+
+
+
+## Otras configuraciones
+
+En el caso de querer hacer un `rebase` de los cambios, se puede ejecutar la siguiente sentencia:
+
+```shell
+## Debe funcionar solo para el repositorio en donde se ejecute la sentencia
+git config pull.rebase true
+
+## En el caso de que la anterior sentencia no funcione, utilizar esta
+git pull --rebase
+```
+
+Pero para que esto sea una configuración global se debe ejecutar la siguiente sentencia:
+
+```shell
+git config --global pull.rebase true
+```
