@@ -523,8 +523,6 @@ git rebase --continue ## Para confirmar que todo esta OK en el local
 git push ## Sube los cambios al repositorio
 ```
 
-
-
 ## Otras configuraciones
 
 En el caso de querer hacer un `rebase` de los cambios, se puede ejecutar la siguiente sentencia:
