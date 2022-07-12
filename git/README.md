@@ -480,6 +480,25 @@ Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente se
 git push --tags
 ```
 
+Para ver los cambios en el repositorio (en realidad baja los cambios pero no hace ningún `merge` con el local):
+
+```shell
+git fetch
+
+# Ejemplo de la salida del comando:
+# remote: Enumerating objects: 10, done.
+# remote: Counting objects: 100% (10/10), done.
+# remote: Compressing objects: 100% (8/8), done.
+# remote: Total 8 (delta 3), reused 0 (delta 0), pack-reused 0
+# Unpacking objects: 100% (8/8), 2.36 KiB | 86.00 KiB/s, done.
+# From https://github.com/edgardma/curso-git
+#   bdd0be7..52e9484  main       -> origin/main
+```
+
+Se debe tener en cuenta que al mostrar los `commit` dentro del repositorio local se pueden visualizar, pero el `HEAD` no se ha movido, para poder actualizar esto, se debe ejecutar un `git pull` o un `git merge`.
+
+
+
 ## Corregir algunos "Warning"
 
 Para corregir el `Warning`: `Pulling without reconcile strategy` se puede resolver con los siguientes comandos:
