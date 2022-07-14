@@ -64,7 +64,7 @@ Comando para actualizar `git` en Windows:
 git update-git-for-windows
 ```
 
-Luego de instalar Git ejecutar las siguientes sentencias:
+Luego de instalar `git` ejecutar las siguientes sentencias:
 
 ```shell
 git config --global user.name "Edgard Marquez"
@@ -77,7 +77,7 @@ Para revisar si se ejecutó correctamente, ejecutar la sentencia:
 git config --list
 ```
 
-Versión de Git:
+Versión de `git`:
 
 ```shell
 git --version
@@ -107,50 +107,50 @@ Lista de archivos que están registrados y/o modificados en ese momento en Git (
 git status
 ```
 
-Agregar todos los archivos para que Git esté pendiente de los cambios:
+Agregar todos los archivos para que `git`esté pendiente de los cambios:
 
 ```shell
 git add .
 ```
 
-Agregar todos los archivos modificados para que Git esté pendiente de los cambios:
+Agregar todos los archivos modificados para que `git`esté pendiente de los cambios:
 
 ```shell
 git add -A
 ```
 
-Agregar todos los archivos para que Git esté pendiente de los cambios:
+Agregar todos los archivos para que `git`esté pendiente de los cambios:
 
 ```shell
 git add --all
 ```
 
-Agregar un archivo para que Git esté pendiente de los cambios en el directorio actual:
+Agregar un archivo para que `git`esté pendiente de los cambios en el directorio actual:
 
 ```shell
 git add NombreArchivo.extension
 git add *.xml
 ```
 
-Agregar un archivo para que Git esté pendiente de los cambios en todo los directorios del proyecto:
+Agregar un archivo para que `git` esté pendiente de los cambios en todo los directorios del proyecto:
 
 ```shell
 git add "*.xml"
 ```
 
-Agregar el contenido de una carpeta para que Git esté pendiente de los cambios:
+Agregar el contenido de una carpeta para que `git` esté pendiente de los cambios:
 
 ```shell
 git add NombreCarpeta/
 ```
 
-Agregar los archivos seleccionados dentro de una carpeta para que Git esté pendiente de los cambios, por ejemplo:
+Agregar los archivos seleccionados dentro de una carpeta para que `git` esté pendiente de los cambios, por ejemplo:
 
 ```shell
 git add NombreCarpeta/*.pf
 ```
 
-Para hacer un `commit` a Git se debe ejecutar el siguiente comando:
+Para hacer un `commit` a `git` se debe ejecutar el siguiente comando:
 
 ```shell
 git commit -m "Descripción del mensaje"
@@ -496,8 +496,6 @@ git fetch
 ```
 
 Se debe tener en cuenta que al mostrar los `commit` dentro del repositorio local se pueden visualizar, pero el `HEAD` no se ha movido, para poder actualizar esto, se debe ejecutar un `git pull` o un `git merge`.
-
-
 
 ## Corregir algunos "Warning"
 
