@@ -22,6 +22,10 @@ lsb_release -a
 | `Ctrl` + `ImprPant`           | Copia la captura de toda la pantalla en el portapapeles.                           |
 | `Shift` + `Ctrl` + `ImprPant` | Copia la captura de un trozo de la pantalla en el portapapeles.                    |
 | `Ctrl` + `Alt` + `ImprPant`   | Copia la captura de la ventana activa en el portapapeles.                          |
+| `Ctrl` + `ALT` + `T`          | Abre el terminal.                                                                  |
+| `Ctrl` + `ALT` + `L`          | Bloque la pantalla.                                                                |
+| `Ctrl` + `L`                  | En Nautilus, cambia a la barra de ruta.                                            |
+| `Ctrl` + `L`                  | En el Terminal, limpia el terminal, es como ejecutar el comando `clear`.           |
 
 *Fuente: [Cómo hacer capturas de pantalla en Ubuntu Linux &#8211; Laboratorios Docentes de la ETSIT](https://labs.etsit.urjc.es/index.php/tutoriales/como-capturar-pantalla-en-ubuntu-linux/)*
 
