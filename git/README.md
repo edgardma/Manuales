@@ -480,6 +480,18 @@ Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente se
 git push --tags
 ```
 
+En Linux, en el caso de que salga el siguiente mensaje `Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.`, en el caso de GitHub se debe obtener un `token`, para ello se debe ir a `Settings / Developer settings / Personal access tokens`; este `token` se debe guardar ya que no se va a mostrar nuevamente, en el caso de querer obtenerlo nuevamente, este código cambiaría.
+
+Este `token` reemplazará a la clave del usuario y siempre será requerido, para evitar esto, se debe almacenar en caché el registro del repositorio para que recuerde el `token`:
+
+```shell
+git config --global credential.helper cache
+```
+
+Ejecutar una sentencia, ingresar  el usuario y `token`, luego de ello ya no debería solicitarlo.
+
+
+
 Para ver los cambios en el repositorio (en realidad baja los cambios pero no hace ningún `merge` con el local):
 
 ```shell
