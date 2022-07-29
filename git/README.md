@@ -33,6 +33,9 @@ git status
 #4- Obtener cambios desde la rama
 git pull [NOMBRE_BRANCH] origin
 
+# o
+git pull --all ## Trae todo, incluyendo las ramas del repositorio
+
 #5- Añadir todos los cambios
 git add .
 
@@ -330,7 +333,10 @@ git add -u
 Listar las ramas en un repositorio:
 
 ```shell
+# Devuelve las ramas locales
 git branch
+# Devuelve las ramas locales y remotas
+git branch -a
 ```
 
 Crear una rama en Git: 
@@ -345,7 +351,17 @@ Cambiar de rama:
 git checkout nombre_rama
 ```
 
-Agregar un archivo y un `commit`:
+Eliminar una rama:
+
+```shell
+# Elimina las ramas locales
+git branch -d nombre_rama
+
+# Si se necesita eliminar las ramas remotas, ejecutar:
+git remote prune origin
+```
+
+Agregar los archivo modificados y un `commit`:
 
 ```shell
 git commit -am "Mensaje"
@@ -489,8 +505,6 @@ git config --global credential.helper cache
 ```
 
 Ejecutar una sentencia, ingresar  el usuario y `token`, luego de ello ya no debería solicitarlo.
-
-
 
 Para ver los cambios en el repositorio (en realidad baja los cambios pero no hace ningún `merge` con el local):
 
