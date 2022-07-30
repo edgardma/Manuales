@@ -413,7 +413,7 @@ git tag -d nombre_tag
 Crear un TAG con anotaciones:
 
 ```shell
-git tag -a v1.0.0 -m "Versión 1.0.0"
+git tag -a v1.0.0 -m "Versión 1.0.0- Estable"
 ```
 
 Crear un TAG en un `commit` anterior:
