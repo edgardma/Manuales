@@ -47,6 +47,8 @@ git commit -m '[MENSAJE]'
 
 #8- Subir los cambios desde el proyecto local hacia la rama
 git push origin [NOMBRE_BRANCH]
+o
+git push --set-upstream origin [REPOSITORIO]
 ```
 
 Otros comandos:
@@ -490,7 +492,13 @@ git branch -M main
 git push -u origin main
 ```
 
-Para subir los `tags` definidos en el local al remoto, ejecutar las siguiente sentencia:
+Para subir todo del repositorio local, ejecutar:
+
+```shell
+git push --all ## Esto incluye tags y ramas
+```
+
+Para subir solamente los `tags` definidos en el local al remoto, ejecutar las siguiente sentencia:
 
 ```shell
 git push --tags
