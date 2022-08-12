@@ -76,6 +76,12 @@ git config --global user.name "Edgard Marquez"
 git config --global user.email edgardma@gmail.com
 ```
 
+Par cambiar poner por defecto el nombre de la rama principal "master" se llame "main":
+
+```shell
+git config --global init.defaultBranch main
+```
+
 Para revisar si se ejecutó correctamente, ejecutar la sentencia:
 
 ```shell
@@ -167,7 +173,7 @@ Asimismo, para agregar los archivos modificados:
 git commite -am "Descripción del mensaje"
 ```
 
-Para restaura lo realizado hasta el momento del repositorio:
+Para restaura todos lo realizado hasta el momento del repositorio:
 
 ```shell
 git checkout -- .
@@ -345,6 +351,15 @@ Crear una rama en Git:
 
 ```shell
 git branch nombre_rama
+```
+
+Renombrar una rama:
+
+```shell
+git branch -m [NOMBRE_RAMA] [NUEVO_NOMBRE]
+
+## Ejemplo, cambiar el nombre de la rama "master" a "main"
+git branch -m master main
 ```
 
 Cambiar de rama:
