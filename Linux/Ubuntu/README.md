@@ -721,3 +721,27 @@ Restart-on=failure
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Personalizar Ubuntu 22.04
+
+En mi caso, he realizo tres personalizaciones que no está en las herramientas de este sistema, los cuales son, poner transparente el panel superior (top bar), ocultar automáticamente el top bar y cambiar la imagen del login.
+
+### Poner transparente el panel superior:
+
+Para poder poner transparente el panel top bar, instalo la extensión [Transparent Top Bar (Adjustable transparency) - Extensiones de GNOME Shell](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/), en donde puede fijar el porcentaje de transparencia del panel.
+
+### Ocultar automáticamente el panel superior:
+
+Para poder ocultar el top bar, instalo la extensión [Hide Top Bar - Extensiones de GNOME Shell](https://extensions.gnome.org/extension/545/hide-top-bar/), en donde dejo activo la opción `In the above case, also show panel when fullscreen`.
+
+### Cambiar la imagen del login:
+
+Para ello ejecuto los siguientes comandos:
+
+```shell
+wget -qO - https://github.com/PRATAP-KUMAR/ubuntu-gdm-set-background/archive/main.tar.gz | tar zx --strip-components=1 ubuntu-gdm-set-background-main/ubuntu-gdm-set-background
+
+sudo ./ubuntu-gdm-set-background --image /usr/share/Darkening_Clockwork_by_Matt_Katzenberger.jpg
+```
+
+Luego de ello, reiniciar el equipo.
