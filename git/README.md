@@ -606,3 +606,23 @@ Pero para que esto sea una configuración global se debe ejecutar la siguiente s
 ```shell
 git config --global pull.rebase true
 ```
+
+
+
+## Revertir un COMMIT
+
+Para revertir un `commit`, se puede usar las siguientes sentencias:
+
+```bash
+## Si se quiere mantener los cambios
+git reset --soft HEAD~1
+
+## Si no se quiere mantener los cambios
+git reset --hard HEAD~1
+```
+
+En el caso de quitar un archivo dentro de un `commit`, se debe ejecutar la siguiente sentencia:
+
+```shell
+git rm --cached "ARCHIVO"
+```
