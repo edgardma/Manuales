@@ -607,8 +607,6 @@ Pero para que esto sea una configuración global se debe ejecutar la siguiente s
 git config --global pull.rebase true
 ```
 
-
-
 ## Revertir un COMMIT
 
 Para revertir un `commit`, se puede usar las siguientes sentencias:
@@ -626,3 +624,15 @@ En el caso de quitar un archivo dentro de un `commit`, se debe ejecutar la sigui
 ```shell
 git rm --cached "ARCHIVO"
 ```
+
+## Errores comunes:
+
+### Error "filename too long git clone error"
+
+Si al momento de hacer un `git clone` o `git checkout` sale este error, se puede ejecutar la siguiente sentencia (se debe ejecutar en modo `administrador`):
+
+```shell
+git config --system core.longpaths true
+```
+
+*Fuente: [java - How to fix &quot;Filename too long error&quot; during git clone - Stack Overflow](https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone)*
