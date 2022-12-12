@@ -432,19 +432,21 @@ sudo netstat -tulpn
 
 ```shell
 # Download e installar el PPA del repositorio NodeSource
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 # Instalar Node.js 16.x, incluyendo también se instalará npm.
 sudo apt install nodejs
 
 # Verificar la versión de Node.js instalada.
-node --version
+node -v
 
 # Verficar la versión de npm instalada.
-npm --version
+npm -v
 ```
 
 *Fuente: [Installing Node.js and Express on Ubuntu 20.04 - Vultr.com](https://www.vultr.com/docs/installing-node-js-and-express-on-ubuntu-20-04/)*
+
+*[How to Install Node.js and npm on Ubuntu 22.04 | Linuxize](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-22-04/)*
 
 ## Instalar Github Desktop:
 
