@@ -1,5 +1,5 @@
 # Código de Error REST
-## Tabla
+
 | Código Estatus | Mensaje de Estatus              | Descripción                                                                                                                                                                                                                                             |
 | -------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400            | Bad Request                     | Solicitud incorrecta. No se puede procesar la solicitud porque está mal formada o es incorrecta.                                                                                                                                                        |
