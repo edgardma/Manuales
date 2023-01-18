@@ -10,4 +10,15 @@ graph TD;
     C-->D;
 ```
 
-   
+El siguiente código es una prueba un poco mas complicada de un diagrama en un Markdown:
+
+```mermaid
+flowchart TD;
+    A[Desplegar en producción]-->B[¿Es viernes?];
+    B--Si-->C[No desplegar];
+    B--No-->D[Ejecutar deploy.bat para desplegar];
+    C---->E[Buen fin de semana];
+    D---->E[Buen fin de semana];
+```
+
+
