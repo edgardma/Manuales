@@ -14,7 +14,7 @@ El siguiente código es una prueba un poco mas complicada de un diagrama en un M
 
 ```mermaid
 flowchart TD;
-    A[Desplegar en producción]-->B{¿Es viernes?};
+    A[Desplegar en producción]-->B{Es viernes?};
     B--Si-->C[No desplegar];
     B--No-->D[Ejecutar deploy.bat para desplegar];
     C---->E[Buen fin de semana];
