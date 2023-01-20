@@ -20,5 +20,3 @@ flowchart TD;
     C---->E[Buen fin de semana];
     D---->E[Buen fin de semana];
 ```
-
-
