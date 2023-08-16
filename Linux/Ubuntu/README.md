@@ -42,12 +42,18 @@ lsb_release -a
   
   ```shell
   sudo apt-get dist-upgrade
+  
+  ## o
+  sudo apt full-upgrade
   ```
 
 - Eliminar paquetes perdidos:
   
   ```shell
   sudo apt autoremove
+  
+  ## En los casos que no se puedan actualizar, ejecutar:
+  sudo apt install --only-upgrade [lista de paquetes a actualizar]
   ```
 
 - Actualizar los paquetes `snap`:
