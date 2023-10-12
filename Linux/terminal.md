@@ -95,6 +95,7 @@
 | *___`hostname`___*                                 | Muestra el identificador del equipo ante una red.                                                                                                                                                       |
 | *___`route -n`___*                                 | Muestra la puerta de enlace predeterminada del equipo.                                                                                                                                                  |
 | *___`nslookup google.com`___*                      | Muestra la IP de un dominio.                                                                                                                                                                            |
+| lsb_release -d                                     | Para mostrar la versión del sistema operativo.                                                                                                                                                          |
 
 ## Comandos para el monitoreo de recursos del sistema
 
