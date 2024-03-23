@@ -60,6 +60,10 @@ lsb_release -a
   
   ```shell
   sudo snap refresh
+
+  ## Actualizar el Snap Store
+  sudo pkill snap-store
+  sudo snap refresh snap-store
   ```
 
 ## Apagar y reiniciar:
