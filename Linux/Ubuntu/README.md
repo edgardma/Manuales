@@ -757,3 +757,25 @@ sudo ./ubuntu-gdm-set-background --image /usr/share/Darkening_Clockwork_by_Matt_
 ```
 
 Luego de ello, reiniciar el equipo.
+
+## Instalar Ubuntu 24.04
+
+### Error: The SUID sandbox helper binary was found, but is not configured correctly
+
+Al ejecutar Jetbrains IntelliJ IDEA en esta versión de Ubuntu se puede cerrar al abrir algunos proyectos, al ejecutar en modo consola, puede salir el siguiente mensaje del error:
+
+```
+The SUID sandbox helper binary was found, but is not configured correctly
+```
+
+Para resolver este problema, se debe ubicar en la ruta de la instalación del aplicativo, en este caso es ```/home/emarquez/app/ideaIC-2024.1/jbr/lib```, y ejecutar las siguientes sentencias:
+
+```shell
+sudo chown root:root chrome-sandbox
+
+sudo chmod 4755 chrome-sandbox
+```
+
+Ahora si puede abrir el proyecto sin problemas.
+
+
