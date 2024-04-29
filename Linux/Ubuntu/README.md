@@ -160,7 +160,7 @@ lsb_release -a
   sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \
-    sudo apt-get install -y dotnet-sdk-5.0
+    sudo apt-get install -y dotnet-sdk-8.0
   ```
 
 - Instalación del entorno de ejecución:
@@ -169,7 +169,7 @@ lsb_release -a
   sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \
-    sudo apt-get install -y aspnetcore-runtime-5.0
+    sudo apt-get install -y aspnetcore-runtime-8.0
   ```
 
 *Fuente:*
