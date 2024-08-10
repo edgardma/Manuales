@@ -60,7 +60,7 @@ lsb_release -a
   
   ```shell
   sudo snap refresh
-
+  
   ## Actualizar el Snap Store
   sudo pkill snap-store
   sudo snap refresh snap-store
@@ -117,6 +117,12 @@ lsb_release -a
   ```shell
   sudo snap search [NOMBRE_PAQUETE]
   ```
+
+## Instalar un archivo "deb"
+
+```bash
+sudo dpkg -i [archiv0.deb]
+```
 
 ## Poner color a la Consola (Ubuntu Server)
 
