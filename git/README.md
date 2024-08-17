@@ -57,8 +57,15 @@ Otros comandos:
 #1- Listar los objetos diferentes (nuevos y/o modificados)
 git status -z -u
 
-#2 - Limpiar el cache de los archivos a ignorar, de esta forma el git ya no rastreará los cambios
+#2 - Limpiar el cache de los archivos a ignorar, de esta forma el git
+# ya no rastreará los cambios
 git rm -r . --cached
+
+#3 - Quitar un archivo previamente agregado con el comadno git add
+git rm --cached [nombre_archivo]
+
+#4 - Mostrar los cambios de un archivo
+git show [nombre_archivo]
 ```
 
 ## Lista de Comandos
@@ -635,4 +642,4 @@ Si al momento de hacer un `git clone` o `git checkout` sale este error, se puede
 git config --system core.longpaths true
 ```
 
-*Fuente: [java - How to fix &quot;Filename too long error&quot; during git clone - Stack Overflow](https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone)*
+*Fuente: [java - How to fix Filename too long error during git clone - Stack Overflow](https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone)*
