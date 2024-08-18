@@ -66,6 +66,9 @@ git rm --cached [nombre_archivo]
 
 #4 - Mostrar los cambios de un archivo
 git show [nombre_archivo]
+
+#5 - "Regresar en el tiempo", regresar a un commit especifico
+git reset [id_commit] --hard
 ```
 
 ## Lista de Comandos
@@ -190,6 +193,9 @@ Para ver los `commit` subidos:
 
 ```shell
 git log
+
+## Para ver los cambios en cada commit
+git log --stat
 ```
 
 Para ver el resumen de todos los `commit`:
@@ -289,6 +295,9 @@ git checkout -- NOMBRE_ARCHIVO
 
 #Ejemplo:
 git checkout -- README.md
+
+## Revertir desde un commit
+git checkout [id_commit] NOMBRE_ARCHIVO
 ```
 
 Adicionar y hacer un `commit` en una sola línea:
