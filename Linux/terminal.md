@@ -24,6 +24,7 @@
 | *__rm__ nombre*                                    | Elimina un objeto "nombre".                                                                                                                                                                             |
 | *__rm__ nombre1 nombre2*                           | Elimina los objetos "nombre1" y "nombre2".                                                                                                                                                              |
 | *__rm__ -r carpeta*                                | Elimina el contenido de la carpeta y la carpeta.                                                                                                                                                        |
+| `rm -f logs/*.*`                                   | Elimina todos los archivos dentro de una carpeta sin hacer preguntas.                                                                                                                                   |
 | *__head__ file*                                    | Visualiza por el terminal la cabecera de una archivo "file" (las 10 primeras líneas).                                                                                                                   |
 | *__head__ file -n lineas*                          | Es igual que el anterior solo que indica la cantidad de líneas a mostrar.                                                                                                                               |
 | *__tail__ file*                                    | Visualiza por el terminal las líneas finales de un archivo "file" (las 10 primeras líneas).                                                                                                             |
@@ -97,7 +98,7 @@
 | *___`hostname`___*                                 | Muestra el identificador del equipo ante una red.                                                                                                                                                       |
 | *___`route -n`___*                                 | Muestra la puerta de enlace predeterminada del equipo.                                                                                                                                                  |
 | *___`nslookup google.com`___*                      | Muestra la IP de un dominio.                                                                                                                                                                            |
-| lsb_release -d                                     | Para mostrar la versión del sistema operativo.                                                                                                                                                          |
+| `lsb_release -d`                                   | Para mostrar la versión del sistema operativo.                                                                                                                                                          |
 
 ## Comandos para el monitoreo de recursos del sistema
 
